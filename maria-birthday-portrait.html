@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños María</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #ffeef8 0%, #fff5e6 50%, #ffe8f5 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .portrait-frame {
+            position: relative;
+            background: linear-gradient(145deg, #ffffff 0%, #fff9f0 100%);
+            border-radius: 30px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+            border: 3px solid rgba(255, 215, 0, 0.4);
+            overflow: hidden;
+        }
+
+        .portrait-frame::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 182, 193, 0.2) 0%, transparent 70%);
+            animation: glow 8s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg); }
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: brightness(1.1) contrast(1.05) saturate(1.2);
+        }
+
+        .sparkle-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            animation: sparkle 3s infinite;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        .balloon {
+            position: absolute;
+            width: 50px;
+            height: 60px;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
+        }
+
+        .balloon::before {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            width: 2px;
+            height: 25px;
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateX(-50%);
+        }
+
+        .balloon1 {
+            top: 10%;
+            left: 5%;
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
+            animation-delay: 0s;
+        }
+
+        .balloon2 {
+            top: 20%;
+            right: 8%;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            animation-delay: 1s;
+        }
+
+        .balloon3 {
+            top: 60%;
+            left: 3%;
+            background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+            animation-delay: 2s;
+        }
+
+        .balloon4 {
+            top: 70%;
+            right: 5%;
+            background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+            animation-delay: 1.5s;
+        }
+
+        .flower {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .flower1 { top: 15%; left: 10%; }
+        .flower2 { top: 25%; right: 12%; }
+        .flower3 { bottom: 20%; left: 8%; }
+        .flower4 { bottom: 15%; right: 10%; }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            animation: fall 4s linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .title {
+            position: relative;
+            font-size: 3em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff69b4, #ffd700, #ff1493);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 30px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #ff69b4;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        .message {
+            font-size: 1.2em;
+            color: #8b4789;
+            line-height: 1.6;
+            margin: 20px auto;
+            max-width: 600px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .hearts {
+            font-size: 2em;
+            color: #ff69b4;
+            margin: 20px 0;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.05); }
+        }
+
+        /* Crear confeti */
+        .confetti:nth-child(1) { left: 10%; background: #ff69b4; animation-delay: 0s; }
+        .confetti:nth-child(2) { left: 20%; background: #ffd700; animation-delay: 0.5s; }
+        .confetti:nth-child(3) { left: 30%; background: #ff1493; animation-delay: 1s; }
+        .confetti:nth-child(4) { left: 40%; background: #ffb6c1; animation-delay: 1.5s; }
+        .confetti:nth-child(5) { left: 50%; background: #fff0f5; animation-delay: 2s; }
+        .confetti:nth-child(6) { left: 60%; background: #ffd700; animation-delay: 0.8s; }
+        .confetti:nth-child(7) { left: 70%; background: #ff69b4; animation-delay: 1.2s; }
+        .confetti:nth-child(8) { left: 80%; background: #ff1493; animation-delay: 1.8s; }
+        .confetti:nth-child(9) { left: 90%; background: #ffb6c1; animation-delay: 2.5s; }
+        .confetti:nth-child(10) { left: 95%; background: #ffd700; animation-delay: 3s; }
+
+        /* Crear chispas */
+        .sparkle:nth-child(1) { top: 20%; left: 15%; animation-delay: 0s; }
+        .sparkle:nth-child(2) { top: 30%; right: 20%; animation-delay: 0.5s; }
+        .sparkle:nth-child(3) { top: 50%; left: 10%; animation-delay: 1s; }
+        .sparkle:nth-child(4) { top: 60%; right: 15%; animation-delay: 1.5s; }
+        .sparkle:nth-child(5) { top: 80%; left: 20%; animation-delay: 2s; }
+        .sparkle:nth-child(6) { top: 10%; right: 10%; animation-delay: 2.5s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Confeti -->
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+
+        <div class="portrait-frame">
+            <!-- Globos -->
+            <div class="balloon balloon1"></div>
+            <div class="balloon balloon2"></div>
+            <div class="balloon balloon3"></div>
+            <div class="balloon balloon4"></div>
+
+            <!-- Flores decorativas -->
+            <div class="flower flower1">🌸</div>
+            <div class="flower flower2">🌺</div>
+            <div class="flower flower3">🌹</div>
+            <div class="flower flower4">🌷</div>
+
+            <h1 class="title">¡Feliz Cumpleaños María!</h1>
+            
+            <div class="image-wrapper">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 1000'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23ffe8f5;stop-opacity:1' /%3E%3Cstop offset='50%25' style='stop-color:%23ffd1dc;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23ffb6c1;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='1000' fill='url(%23grad1)'/%3E%3Ccircle cx='400' cy='300' r='150' fill='%23fff0f5' opacity='0.6'/%3E%3Ccircle cx='400' cy='500' r='120' fill='%23ffd700' opacity='0.3'/%3E%3Ctext x='400' y='520' font-family='Georgia' font-size='80' fill='%23ff69b4' text-anchor='middle' font-weight='bold'%3EMaría%3C/text%3E%3Ctext x='400' y='600' font-family='Georgia' font-size='40' fill='%238b4789' text-anchor='middle'%3ERadiante y Feliz%3C/text%3E%3Ccircle cx='200' cy='150' r='30' fill='%23ff69b4' opacity='0.5'/%3E%3Ccircle cx='600' cy='200' r='25' fill='%23ffd700' opacity='0.5'/%3E%3Ccircle cx='150' cy='800' r='35' fill='%23ff1493' opacity='0.5'/%3E%3Ccircle cx='650' cy='850' r='30' fill='%23ffb6c1' opacity='0.5'/%3E%3Cpath d='M 400 100 Q 420 120 400 140 Q 380 120 400 100' fill='%23ff69b4'/%3E%3Cpath d='M 500 700 Q 520 720 500 740 Q 480 720 500 700' fill='%23ffd700'/%3E%3C/svg%3E" alt="María - Retrato Artístico">
+                
+                <div class="sparkle-overlay">
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                </div>
+            </div>
+
+            <p class="subtitle">✨ Un día especial para una persona especial ✨</p>
+            
+            <div class="hearts">💖 💝 💗</div>
+            
+            <p class="message">
+                Que este nuevo año de vida esté lleno de momentos mágicos,
+                sonrisas radiantes y sueños cumplidos.
+                Que la alegría te acompañe siempre, María.
+            </p>
+
+            <div class="hearts">🎂 🎈 🎁</div>
+        </div>
+    </div>
+
+    <script>
+        // Animación adicional de partículas
+        function createFloatingElements() {
+            const container = document.querySelector('.container');
+            const elements = ['✨', '🌟', '💫', '⭐'];
+            
+            setInterval(() => {
+                const el = document.createElement('div');
+                el.style.position = 'absolute';
+                el.style.left = Math.random() * 100 + '%';
+                el.style.top = '-50px';
+                el.style.fontSize = '20px';
+                el.style.opacity = '0.7';
+                el.textContent = elements[Math.floor(Math.random() * elements.length)];
+                el.style.animation = 'fall 5s linear';
+                el.style.pointerEvents = 'none';
+                
+                container.appendChild(el);
+                
+                setTimeout(() => el.remove(), 5000);
+            }, 800);
+        }
+        
+        createFloatingElements();
+    </script>
+</body>
+</html>
