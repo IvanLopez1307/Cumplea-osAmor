@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz Cumpleaños María</title>
+    <title>Feliz Cumpleaños Mi Amada María</title>
     <style>
         * {
             margin: 0;
@@ -226,6 +226,120 @@
             50% { transform: scale(1); }
             75% { transform: scale(1.05); }
         }
+        .circle-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            border: 8px solid rgba(255, 192, 203, 0.8);
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.4);
+            background: radial-gradient(circle, #fff0f5, #ffe4e1);
+            animation: pulse 6s ease-in-out infinite;
+        }
+
+        .circle-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .birthday-letter {
+  background-color: #ffe6f0; /* rosado suave */
+  padding: 40px 20px;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(255, 182, 193, 0.4);
+  margin-top: 40px;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  color: #4a2c2c;
+}
+
+.letter-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 60px;
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.25);
+  border: 2px solid #ffb6c1;
+}
+
+.letter-title {
+  text-align: center;
+  color: #ff4d94;
+  font-family: "Dancing Script", cursive;
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+
+.birthday-letter p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.birthday-letter strong {
+  color: #e60073;
+}
+
+.birthday-letter .final-line {
+  text-align: center;
+  margin-top: 25px;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.highlight {
+  color: #ff1a75;
+  font-weight: bold;
+  font-family: "Dancing Script", cursive;
+  font-size: 1.3rem;
+}
+
+
+.signature {
+  text-align: right;
+  margin-top: 40px;
+  font-family: 'Great Vibes', cursive;
+  color: #ff99c8;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hearts span {
+  position: absolute;
+  bottom: 0;
+  font-size: 24px;
+  animation: float 8s infinite ease-in-out;
+}
+
+.hearts span:nth-child(1) { left: 10%; animation-delay: 0s; }
+.hearts span:nth-child(2) { left: 30%; animation-delay: 2s; }
+.hearts span:nth-child(3) { left: 50%; animation-delay: 4s; }
+.hearts span:nth-child(4) { left: 70%; animation-delay: 6s; }
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-600px); opacity: 0; }
+}
+
+.btn-music {
+  background-color: #ffb6c1;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #ff99c8;
+}
+.btn-music:hover {
+  background-color: #ff99c8;
+  transform: scale(1.05);
+}
+
+
 
         /* Crear confeti */
         .confetti:nth-child(1) { left: 10%; background: #ff69b4; animation-delay: 0s; }
@@ -262,6 +376,22 @@
         <div class="confetti"></div>
         <div class="confetti"></div>
 
+        <div class="image-wrapper">
+    <div class="circle-image">
+        <img src="imagen.jpg" alt="Retrato de María">
+    </div>
+    
+    <div class="sparkle-overlay">
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+    </div>
+</div>
+
+
         <div class="portrait-frame">
             <!-- Globos -->
             <div class="balloon balloon1"></div>
@@ -275,10 +405,9 @@
             <div class="flower flower3">🌹</div>
             <div class="flower flower4">🌷</div>
 
-            <h1 class="title">¡Feliz Cumpleaños María!</h1>
+            <h1 class="title">¡Feliz Cumpleaños Mi Amada María!</h1>
             
             <div class="image-wrapper">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 1000'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23ffe8f5;stop-opacity:1' /%3E%3Cstop offset='50%25' style='stop-color:%23ffd1dc;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23ffb6c1;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='1000' fill='url(%23grad1)'/%3E%3Ccircle cx='400' cy='300' r='150' fill='%23fff0f5' opacity='0.6'/%3E%3Ccircle cx='400' cy='500' r='120' fill='%23ffd700' opacity='0.3'/%3E%3Ctext x='400' y='520' font-family='Georgia' font-size='80' fill='%23ff69b4' text-anchor='middle' font-weight='bold'%3EMaría%3C/text%3E%3Ctext x='400' y='600' font-family='Georgia' font-size='40' fill='%238b4789' text-anchor='middle'%3ERadiante y Feliz%3C/text%3E%3Ccircle cx='200' cy='150' r='30' fill='%23ff69b4' opacity='0.5'/%3E%3Ccircle cx='600' cy='200' r='25' fill='%23ffd700' opacity='0.5'/%3E%3Ccircle cx='150' cy='800' r='35' fill='%23ff1493' opacity='0.5'/%3E%3Ccircle cx='650' cy='850' r='30' fill='%23ffb6c1' opacity='0.5'/%3E%3Cpath d='M 400 100 Q 420 120 400 140 Q 380 120 400 100' fill='%23ff69b4'/%3E%3Cpath d='M 500 700 Q 520 720 500 740 Q 480 720 500 700' fill='%23ffd700'/%3E%3C/svg%3E" alt="María - Retrato Artístico">
                 
                 <div class="sparkle-overlay">
                     <div class="sparkle"></div>
@@ -302,7 +431,74 @@
 
             <div class="hearts">🎂 🎈 🎁</div>
         </div>
-    </div>
+
+
+        <section class="birthday-letter">
+  <div class="letter-container">
+    <h2 class="letter-title">💌 Carta para María — De parte de Iván López</h2>
+
+    <p>Amor,</p>
+
+    <p>
+      Quiero desearte un <strong>muy feliz cumpleaños</strong>. Deseo de todo corazón que cumplas muchísimos más, 
+      y que este día —y todos los que vienen— estén llenos de alegría, sonrisas y momentos lindos. 
+      Que el universo te regale una vida larga, con mucha <strong>felicidad, amor, salud, riqueza y bendiciones</strong>.
+    </p>
+
+    <p>
+      Deseo también que todas las personas que te rodean te amen siempre, así como yo te amo. 
+      Porque lo que siento por ti es un amor inmenso, de esos que se sienten en cada parte del alma. 💞
+    </p>
+
+    <p>
+      Eres una persona genial, maravillosa, única. Espero que sigas creciendo cada día, tanto 
+      <strong>profesionalmente</strong> como <strong>personalmente</strong>, y que logres 
+      <strong>grandes cosas</strong> —porque sé que puedes hacerlo—.  
+      Y yo espero estar ahí, a tu lado, para acompañarte <strong>siempre y siempre</strong>.
+    </p>
+
+    <p>
+      Quiero que sepas que <strong>te amo muchísimo</strong>, que valoro profundamente el tiempo que hemos compartido 
+      y que deseo de todo corazón que sea <strong>para siempre</strong>.  
+      Me encanta todo de ti. Eres una persona <strong>espectacular</strong>, y disfruto cada momento contigo. 
+      Estar contigo es una verdadera <strong>maravilla</strong>.
+    </p>
+
+    <p>
+      Así que, <strong>feliz cumpleaños, amor</strong>. 💐  
+      Espero que tengas un día hermoso, y nunca olvides que te amo <strong>mucho, mucho, mucho</strong>. 💖
+    </p>
+
+    <p>
+      Además, quiero felicitarte por ser una <strong>gran mujer</strong>: tan <strong>estudiosa</strong>, tan 
+      <strong>dedicada</strong>, tan <strong>buena en lo que haces</strong>, tan <strong>bella persona</strong>.  
+      Tienes un <strong>corazón precioso</strong>, lleno de bondad, y una fuerza increíble.  
+      Eres una mujer <strong>valiente, luchadora e inteligente</strong>, y deseo seguir a tu lado para acompañarte en todo lo que venga.
+    </p>
+
+    <p class="final-line">
+      Muchas felicidades, mi amor.  
+      <span class="highlight">Te amo demasiado ❤️</span>
+    </p>
+  </div>
+  
+</section>
+<button class="btn-music" onclick="window.open('https://www.youtube.com/watch?v=mI2IKfKSCVg&list=RDmI2IKfKSCVg&start_radio=1', '_blank')">
+  💞 Te dedico esta canción mi amor 💞
+</button>
+
+<div class="signature">
+  <p>Con todo mi amor,</p>
+  <h3>Iván 💖</h3>
+</div>
+
+<div class="hearts">
+  <span>💗</span><span>💖</span><span>💞</span><span>💘</span>
+</div>
+
+
+  
+    
 
     <script>
         // Animación adicional de partículas
