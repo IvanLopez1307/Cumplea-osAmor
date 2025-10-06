@@ -427,6 +427,43 @@
 }
 
 
+        /* Ajuste específico para la carta en pantallas pequeñas */
+@media (max-width: 768px) {
+  .letter-container {
+    width: 95%;
+    max-width: none;
+    padding: 25px 15px;
+    margin: 0 auto;
+  }
+
+  .birthday-letter {
+    padding: 20px 10px;
+  }
+
+  .birthday-letter p {
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 100%;
+    text-align: justify;
+    word-spacing: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .letter-container {
+    width: 100%;
+    padding: 20px 12px;
+  }
+
+  .birthday-letter p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+  }
+}
+
+
+
 
         /* Crear confeti */
         .confetti:nth-child(1) { left: 10%; background: #ff69b4; animation-delay: 0s; }
